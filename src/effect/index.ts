@@ -31,7 +31,7 @@ function effect<T, V = T>(
 
   if (typeof option1 === 'function') {
     compare = option1;
-    if (options.length > 1) defaults = option2;
+    defaults = options.length > 1 ? option2 : compare(observable());
   } else if (options.length === 1) defaults = option1;
 
   let previousValue = defaults;

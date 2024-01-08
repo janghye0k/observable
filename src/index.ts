@@ -152,4 +152,5 @@ ObservableValue.prototype.compute = function compute() {
   }
 };
 
+export { default as effect } from './effect';
 export { observable };

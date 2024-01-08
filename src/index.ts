@@ -1,13 +1,13 @@
-type Lisetner<T> = (state: T, prevState: T) => any;
+export type Lisetner<T> = (state: T, prevState: T) => any;
 
-type UnSubscriber = () => void;
+export type UnSubscriber = () => void;
 
-type Subscribe<T> = (
+export type Subscribe<T> = (
   listener: Lisetner<T>,
   immediate?: boolean
 ) => UnSubscriber;
 
-type Observable<T> = {
+export type Observable<T> = {
   (): T;
   (value: T): void;
   value: T;
@@ -130,7 +130,7 @@ ObservableValue.prototype.subscribe = function subscribe(
   if (immediate) {
     listener.call(this, this.value, this.previousValue);
   }
-  return () => ObservableValue.prototype.unsubscribe(listener);
+  return () => ObservableValue.prototype.unsubscribe.call(this, listener);
 };
 
 ObservableValue.prototype.unsubscribe = function unsubscribe(

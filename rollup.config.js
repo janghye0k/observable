@@ -18,14 +18,7 @@ function createDeclaration(output, format) {
   return {
     input: './src/index.ts',
     output: { file: output, format },
-    plugins: [
-      dts({
-        compilerOptions: {
-          baseUrl: tsc.compilerOptions.baseUrl,
-          paths: tsc.compilerOptions.paths,
-        },
-      }),
-    ],
+    plugins: [dts()],
   };
 }
 
@@ -37,15 +30,14 @@ function createBuild(output, format) {
   return {
     input: './src/index.ts',
     output: {
-      file: pkg.main,
-      format: 'cjs',
+      file: output,
+      format: format,
       sourcemap: false,
     },
 
     plugins: [
       typescript({
         tsconfig: 'tsconfig.json',
-        clean: true,
       }),
       babel({
         ...babelConfig,
@@ -58,18 +50,7 @@ function createBuild(output, format) {
 
 /** @type {import('rollup').RollupOptions[]} */
 module.exports = [
-  {
-    input: './src/index.ts',
-    output: { file: pkg.types, format: 'cjs' },
-    plugins: [
-      dts({
-        compilerOptions: {
-          baseUrl: tsc.compilerOptions.baseUrl,
-          paths: tsc.compilerOptions.paths,
-        },
-      }),
-    ],
-  },
-  createBuild(pkg.main, 'cjs'),
-  createBuild(pkg.module, 'esm'),
+  createDeclaration(pkg.types, 'cjs'),
+  createBuild(pkg.exports['.'].require, 'cjs'),
+  createBuild(pkg.exports['.'].module, 'esm'),
 ];

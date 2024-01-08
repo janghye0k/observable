@@ -9,6 +9,7 @@
     ".": {
       "import": "./dist/index.js",
       "module": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "default": "./dist/index.cjs"
     }
   },
@@ -23,6 +24,7 @@
     "test": "npm run test:coverage",
     "release": "standard-version",
     "clean": "rimraf dist",
+    "build": "rollup --config",
     "prebuild": "npm run clean",
     "prepare": "husky install",
     "prepublish": "npm run build"

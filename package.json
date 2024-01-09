@@ -1,5 +1,5 @@
 {
-  "name": "observable-state",
+  "name": "@janghye0k/observable",
   "version": "1.0.0",
   "description": "A small, fast state-management solution using observer pattern.",
   "main": "dist/index.cjs",
@@ -36,6 +36,8 @@
   "author": "JangHyeok Kim",
   "keywords": [
     "javascript",
+    "state",
+    "observable",
     "state-management"
   ],
   "files": [

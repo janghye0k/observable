@@ -1,5 +1,5 @@
-[![Build Size](https://img.shields.io/bundlephobia/minzip/observable-state?label=bundle%20size&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/result?p=observable-state)
-[![Version](https://img.shields.io/npm/v/observable-state?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/observable-state)
+[![Build Size](https://img.shields.io/bundlephobia/minzip/@janghye0k/observable?label=bundle%20size&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/result?p=@janghye0k/observable)
+[![Version](https://img.shields.io/npm/v/@janghye0k/observable?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/@janghye0k/observable)
 
 A small, fast state-management solution using observer pattern.
 This library allows you to create observables, subscribe to them, and publish changes to them. It also supports computed observables,
@@ -9,7 +9,7 @@ You can try a live demo [here][demo link].
 ## Installation
 
 ```shell
-npm install observable-state # or yarn add observable-state or pnpm add observable-state
+npm install @janghye0k/observable # or yarn add @janghye0k/observable or pnpm add @janghye0k/observable
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ npm install observable-state # or yarn add observable-state or pnpm add observab
 #### Create observable state
 
 ```js
-import { observable } from 'observalble-state';
+import { observable } from '@janghye0k/observable';
 
 const ov = observable('init');
 const listener = function (state, prevState) {};

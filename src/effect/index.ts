@@ -34,7 +34,7 @@ function effect<T, V = T>(
     defaults = options.length > 1 ? option2 : compare(observable());
   } else if (options.length === 1) defaults = option1;
 
-  let previousValue = defaults;
+  let previousValue = immediate ? !defaults : defaults;
   return observable.subscribe((state, prevState) => {
     const currentValue = compare(state);
     if (isEqual(currentValue, previousValue)) return;

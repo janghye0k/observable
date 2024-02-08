@@ -18,7 +18,7 @@ describe('EFFECT TEST', () => {
   it('with default', () => {
     const ov = observable({ key: 0 });
     let count = 0;
-    effect(() => count++, [ov, true], { key: 0 });
+    effect(() => count++, [ov], { key: 0 });
     expect(count).toBe(0);
   });
 
@@ -48,12 +48,12 @@ describe('EFFECT TEST', () => {
       5
     );
 
-    expect(count).toBe(0);
+    expect(count).toBe(1);
 
     ov({ a: 3, b: 5 });
-    expect(count).toBe(0);
+    expect(count).toBe(1);
 
     ov({ a: 7, b: 7 });
-    expect(count).toBe(1);
+    expect(count).toBe(2);
   });
 });

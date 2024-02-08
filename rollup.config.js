@@ -33,6 +33,7 @@ function createBuild(output, format) {
       file: output,
       format: format,
       sourcemap: false,
+      name: format === 'umd' ? 'Observable' : undefined,
     },
 
     plugins: [
@@ -53,4 +54,5 @@ module.exports = [
   createDeclaration(pkg.types, 'cjs'),
   createBuild(pkg.exports['.'].require, 'cjs'),
   createBuild(pkg.exports['.'].module, 'esm'),
+  createBuild(pkg.exports['.'].browser, 'umd'),
 ];

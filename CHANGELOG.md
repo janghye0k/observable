@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/janghye0k/observable/compare/v1.0.1...v1.0.2) (2024-02-08)
+
+### Bug Fixes
+
+- effect immediate options not work ([feab60e](https://github.com/janghye0k/observable/commit/feab60e600635689c9650f6ffce1b55bd0af388c))
+
 ### [1.0.1](https://github.com/janghye0k/observable/compare/v1.0.0...v1.0.1) (2024-01-09)
 
 ### Bug Fixes

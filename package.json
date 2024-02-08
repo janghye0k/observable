@@ -1,6 +1,6 @@
 {
   "name": "@janghye0k/observable",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small, fast state-management solution using observer pattern.",
   "main": "dist/observable.js",
   "types": "dist/index.d.ts",
